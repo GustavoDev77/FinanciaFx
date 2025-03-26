@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+
+<VBox spacing="15" alignment="CENTER"
+      xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.financiai.JavaFxController.ControllerPage">
+
+    <padding>
+        <Insets top="20.0" right="20.0" bottom="20.0" left="20.0"/>
+    </padding>
+
+    <!-- Título -->
+    <Label text="Simulador de Financiamento" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+    <!-- Grid para os Campos de Entrada -->
+    <GridPane hgap="10" vgap="10">
+        <Label text="Nome do Cliente:"/>
+        <TextField fx:id="nomeClienteField" promptText="Digite o nome"/>
+
+        <Label text="Renda Mensal:"/>
+        <TextField fx:id="rendaClienteField" promptText="Digite a renda"/>
+
+        <Label text="Valor do Financiamento:"/>
+        <TextField fx:id="valorFinanciamentoField" promptText="Digite o valor"/>
+
+        <Label text="Prazo (meses):"/>
+        <TextField fx:id="prazoField" promptText="Digite o prazo"/>
+    </GridPane>
+
+    <!-- Botão para Calcular -->
+    <HBox spacing="10">
+        <Button text="Calcular Financiamento" onAction="#calcularFinanciamento" style="-fx-font-size: 14px;"/>
+    </HBox>
+
+    <!-- Exibição dos Resultados -->
+    <Label fx:id="resultadoLabel" text="Resultado aparecerá aqui" style="-fx-font-size: 16px; -fx-text-fill: green;"/>
+
+    <!-- Tabela de Parcelas -->
+    <TextArea fx:id="tabelaParcelasArea" editable="false" wrapText="true"
+              prefRowCount="10" prefWidth="400"
+              style="-fx-font-family: 'Courier New'; -fx-font-size: 12px;"/>
+</VBox>
