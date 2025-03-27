@@ -1,39 +1,14 @@
 package org.financiai.model.entities;
 
 public class Parcelas {
-
-    private int id; // ID da parcela
     private int numeroParcela;
-    private Double valorParcela;
-    private Double valorAmortizacao;
-    private int financiamentoId; // ID do financiamento associado à parcela
+    private double valorParcela;
+    private double valorAmortizacao;
 
-    // Construtor sem id (para criação antes de inserir no banco de dados)
-    public Parcelas(int numeroParcela, Double valorParcela, Double valorAmortizacao, int financiamentoId) {
+    public Parcelas(int numeroParcela, double valorParcela, double valorAmortizacao) {
         this.numeroParcela = numeroParcela;
         this.valorParcela = valorParcela;
         this.valorAmortizacao = valorAmortizacao;
-        this.financiamentoId = financiamentoId;
-    }
-
-    // Construtor com todos os atributos (incluindo id)
-    public Parcelas(int id, int numeroParcela, Double valorParcela, Double valorAmortizacao, int financiamentoId) {
-        this.id = id;
-        this.numeroParcela = numeroParcela;
-        this.valorParcela = valorParcela;
-        this.valorAmortizacao = valorAmortizacao;
-        this.financiamentoId = financiamentoId;
-    }
-
-
-    // Getters e Setters
-
-    public int getId() {// ID da parcela
-        return id;
-    }
-
-    public void setId(int id) {// ID da parcela
-        this.id = id;
     }
 
     public int getNumeroParcela() {
@@ -44,29 +19,19 @@ public class Parcelas {
         this.numeroParcela = numeroParcela;
     }
 
-    public Double getValorParcela() {
+    public double getValorParcela() {
         return valorParcela;
     }
 
-    public void setValorParcela(Double valorParcela) {
+    public void setValorParcela(double valorParcela) {
         this.valorParcela = valorParcela;
     }
 
-    public Double getValorAmortizacao() {
+    public double getValorAmortizacao() {
         return valorAmortizacao;
     }
 
-    public void setValorAmortizacao(Double valorAmortizacao) {
+    public void setValorAmortizacao(double valorAmortizacao) {
         this.valorAmortizacao = valorAmortizacao;
     }
-
-    public int getFinanciamentoId() {// ID do financiamento associado à parcela
-        return financiamentoId;
-    }
-
-    public void setFinanciamentoId(int financiamentoId) {// ID do financiamento associado à parcela
-        this.financiamentoId = financiamentoId;
-    }
-
-
 }

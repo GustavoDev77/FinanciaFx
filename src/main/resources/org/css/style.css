@@ -1,84 +1,72 @@
-/* Estilo para o VBox (container principal) */
+/* Estilo para a VBox */
 .root {
-    -fx-background-color: #e0f7fa;  /* Fundo azul claro */
-    -fx-padding: 20px;
-    -fx-spacing: 15px;
+    -fx-background-color: #f0f0f0;
+    -fx-padding: 10px;
     -fx-alignment: center;
-    -fx-font-family: Arial, sans-serif;
+    -fx-font-family: "Roboto", sans-serif;
 }
 
 /* Título */
-.label {
-    -fx-font-size: 22px;
-    -fx-font-weight: bold;
-    -fx-text-fill: #00796b; /* Texto verde escuro */
-    -fx-padding: 10px;
-}
-
-/* Estilo dos campos de entrada (TextField) */
-.text-field {
-    -fx-font-size: 14px;
-    -fx-background-color: #ffffff;
-    -fx-border-color: #b2dfdb;  /* Borda suave verde claro */
-    -fx-border-radius: 5px;
+.titulo {
+    -fx-font-size: 14px; /* Tamanho reduzido */
+    -fx-font-weight: 600;
+    -fx-text-fill: #333333;
     -fx-padding: 8px;
+    -fx-align-self: center;
 }
 
-.text-field:focused {
-    -fx-border-color: #00796b; /* Cor de destaque ao focar */
+/* Estilo dos campos de entrada */
+.text-field, .choice-box {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #00A1D6;
+    -fx-border-radius: 6px; /* Bordas mais suaves */
+    -fx-padding: 6px; /* Reduzindo o padding */
+    -fx-pref-width: 250px; /* Diminuindo a largura */
+    -fx-font-size: 12px; /* Fonte reduzida */
 }
 
-/* Estilo das Labels nos campos de entrada */
+/* Estilo dos Labels */
 .label {
-    -fx-font-size: 14px;
-    -fx-text-fill: #00796b;
+    -fx-font-size: 12px; /* Fonte menor */
+    -fx-text-fill: #333333;
+    -fx-font-weight: 500;
 }
 
 /* Estilo do botão */
-.button {
-    -fx-background-color: #00796b; /* Cor verde */
+.button, .botao {
+    -fx-background-color: #00A1D6;
     -fx-text-fill: white;
-    -fx-font-size: 14px;
-    -fx-padding: 10px 20px;
-    -fx-border-radius: 5px;
+    -fx-font-size: 12px; /* Fonte menor */
+    -fx-padding: 8px 16px; /* Botão mais compacto */
+    -fx-border-radius: 20px;
     -fx-cursor: hand;
 }
 
-.button:hover {
-    -fx-background-color: #004d40; /* Cor do botão ao passar o mouse */
-}
-
-/* Estilo do Label de resultado */
+/* Resultado */
 #resultadoLabel {
-    -fx-font-size: 16px;
-    -fx-text-fill: #004d40; /* Texto verde escuro */
-    -fx-font-weight: bold;
-    -fx-padding: 10px;
+    -fx-font-size: 12px; /* Fonte menor */
+    -fx-text-fill: #4CAF50;
+    -fx-padding: 8px;
+    -fx-background-color: #E8F5E9;
+    -fx-border-radius: 6px;
 }
 
-/* Estilo para a área de texto (Tabela de Parcelas) */
+/* Tabela de parcelas */
 .text-area {
-    -fx-background-color: #ffffff;
-    -fx-border-color: #b2dfdb;
-    -fx-border-radius: 5px;
-    -fx-font-family: 'Courier New', monospace;
-    -fx-font-size: 12px;
-    -fx-padding: 10px;
-    -fx-wrap-text: true;
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #00A1D6;
+    -fx-border-radius: 6px; /* Bordas mais suaves */
+    -fx-font-family: "Courier New", monospace;
+    -fx-font-size: 12px; /* Fonte reduzida */
+    -fx-padding: 8px; /* Padding reduzido */
+    -fx-pref-width: 250px; /* Largura mais compacta */
+    -fx-pref-height: 150px; /* Altura mais compacta */
+    -fx-wrap-text: true; /* Permitir quebra de texto */
 }
 
-.text-area:focused {
-    -fx-border-color: #00796b;
-}
 
-/* Estilo do GridPane */
-.grid-pane {
-    -fx-hgap: 10px;
-    -fx-vgap: 10px;
-    -fx-alignment: center;
-}
 
-/* Estilo do HBox para o botão */
-.hbox {
-    -fx-alignment: center;
-}
+
+
+
+
