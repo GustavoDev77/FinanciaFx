@@ -1,0 +1,84 @@
+/* Estilo para o VBox (container principal) */
+.root {
+    -fx-background-color: #e0f7fa;  /* Fundo azul claro */
+    -fx-padding: 20px;
+    -fx-spacing: 15px;
+    -fx-alignment: center;
+    -fx-font-family: Arial, sans-serif;
+}
+
+/* Título */
+.label {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #00796b; /* Texto verde escuro */
+    -fx-padding: 10px;
+}
+
+/* Estilo dos campos de entrada (TextField) */
+.text-field {
+    -fx-font-size: 14px;
+    -fx-background-color: #ffffff;
+    -fx-border-color: #b2dfdb;  /* Borda suave verde claro */
+    -fx-border-radius: 5px;
+    -fx-padding: 8px;
+}
+
+.text-field:focused {
+    -fx-border-color: #00796b; /* Cor de destaque ao focar */
+}
+
+/* Estilo das Labels nos campos de entrada */
+.label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #00796b;
+}
+
+/* Estilo do botão */
+.button {
+    -fx-background-color: #00796b; /* Cor verde */
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 10px 20px;
+    -fx-border-radius: 5px;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #004d40; /* Cor do botão ao passar o mouse */
+}
+
+/* Estilo do Label de resultado */
+#resultadoLabel {
+    -fx-font-size: 16px;
+    -fx-text-fill: #004d40; /* Texto verde escuro */
+    -fx-font-weight: bold;
+    -fx-padding: 10px;
+}
+
+/* Estilo para a área de texto (Tabela de Parcelas) */
+.text-area {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #b2dfdb;
+    -fx-border-radius: 5px;
+    -fx-font-family: 'Courier New', monospace;
+    -fx-font-size: 12px;
+    -fx-padding: 10px;
+    -fx-wrap-text: true;
+}
+
+.text-area:focused {
+    -fx-border-color: #00796b;
+}
+
+/* Estilo do GridPane */
+.grid-pane {
+    -fx-hgap: 10px;
+    -fx-vgap: 10px;
+    -fx-alignment: center;
+}
+
+/* Estilo do HBox para o botão */
+.hbox {
+    -fx-alignment: center;
+}

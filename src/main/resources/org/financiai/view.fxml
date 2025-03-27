@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+<?import java.net.URL?>
 <VBox alignment="CENTER" prefWidth="677.0" spacing="15" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.financiai.JavaFxController.ControllerPage">
+    <!-- Adicionando o CSS -->
+    <stylesheets>
+        <URL value="@../css/style.css" />
+    </stylesheets>
 
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
@@ -27,18 +31,18 @@
         <Label text="Valor do Financiamento:" GridPane.columnIndex="4" />
         <TextField fx:id="valorFinanciamentoField" promptText="Digite o valor" GridPane.columnIndex="4" GridPane.rowIndex="2" />
 
-      <columnConstraints>
-         <ColumnConstraints />
-         <ColumnConstraints />
-         <ColumnConstraints />
-         <ColumnConstraints />
-         <ColumnConstraints />
-      </columnConstraints>
-      <rowConstraints>
-         <RowConstraints />
-         <RowConstraints />
-         <RowConstraints />
-      </rowConstraints>
+        <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints />
+            <ColumnConstraints />
+            <ColumnConstraints />
+            <ColumnConstraints />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+        </rowConstraints>
     </GridPane>
 
     <!-- Botão para Calcular -->

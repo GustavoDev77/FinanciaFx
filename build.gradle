@@ -26,7 +26,7 @@ application {
 }
 
 javafx {
-    version = '17.0.6'
+    version = '23'
     modules = ['javafx.controls', 'javafx.fxml']
 }
 
@@ -41,8 +41,12 @@ dependencies {
     // Conexão com banco de dados
     implementation("mysql:mysql-connector-java:8.0.33")
 
-    // Geração de PDF
-    implementation ("com.itextpdf:itextpdf:5.5.13.3")
+    // JavaFX dependências compatíveis com JDK 21
+    implementation 'org.openjfx:javafx-controls:21.0.1' // Ou 23, se preferir
+    implementation 'org.openjfx:javafx-fxml:21.0.1'     // Ou 23
+    // iTextPDF
+    implementation 'com.itextpdf:itextpdf:5.5.13.3'     // Versão compatível
+    // java.sql já está no JDK, não precisa declarar
 }
 
 tasks.test {
@@ -58,7 +62,8 @@ jlink {
 }
 
 application {
-    mainClass.set("org.financiai.main")
+    mainModule = 'org.financiai'
+    mainClass = 'org.financiai.main'
 }
 
 jlinkZip {

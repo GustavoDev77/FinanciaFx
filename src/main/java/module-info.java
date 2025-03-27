@@ -1,4 +1,4 @@
-module org.financiai.financiai {
+module org.financiai {
     requires javafx.controls;
     requires javafx.fxml;
     requires java.sql;
