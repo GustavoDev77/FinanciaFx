@@ -24,18 +24,17 @@ public class ControllerPage {
     @FXML
     private TextArea tabelaParcelasArea;
 
-    // Método para calcular o financiamento
     @FXML
     public void calcularFinanciamento(ActionEvent event) {
         try {
+            tabelaParcelasArea.setText("CU");
             String nomeCliente = nomeClienteField.getText();
             double rendaMensal = Double.parseDouble(rendaClienteField.getText());
             double valorFinanciamento = Double.parseDouble(valorFinanciamentoField.getText());
             int prazo = Integer.parseInt(prazoField.getText());
 
-            // Simulação simples
             double valorParcela = valorFinanciamento / prazo;
-            double limiteParcela = rendaMensal * 0.3; // Máx. 30% da renda
+            double limiteParcela = rendaMensal * 0.3;
 
             if (valorParcela > limiteParcela) {
                 resultadoLabel.setText("Financiamento negado. Parcela acima do limite!");
@@ -44,8 +43,9 @@ public class ControllerPage {
                 resultadoLabel.setText("Financiamento aprovado!");
                 tabelaParcelasArea.setText(gerarTabelaParcelas(prazo, valorParcela));
             }
-        } catch (NumberFormatException e) {
-            resultadoLabel.setText("Por favor, insira valores numéricos válidos.");
+        } catch (Exception e) {
+            e.printStackTrace();
+            resultadoLabel.setText(e.toString());
             tabelaParcelasArea.setText("");
         }
     }

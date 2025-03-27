@@ -12,7 +12,7 @@ public class main extends Application {
     public void start(Stage primaryStage) throws Exception {
         // Carrega o arquivo FXML
         Parent root = FXMLLoader.load(getClass().getResource("/org/financiai/view.fxml"));
-        primaryStage.setTitle("Simulador de Financiamento");
+        primaryStage.setTitle("Simulador de JOKIBA");
         primaryStage.setScene(new Scene(root, 600, 400));
         primaryStage.show();
     }
