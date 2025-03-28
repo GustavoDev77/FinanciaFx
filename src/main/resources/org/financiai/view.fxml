@@ -1,59 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.collections.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.collections.FXCollections?>
+<?import javafx.scene.text.*?>
 
-<?import java.lang.String?>
-<?import javafx.scene.image.ImageView?>
-<?import java.net.URL?>
-<?import javafx.scene.image.Image?>
-<VBox alignment="CENTER" prefWidth="350.0" spacing="20" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.financiai.JavaFxController.ControllerPage">
-    <stylesheets>
-        <URL value="@../css/style.css" />
-    </stylesheets>
+<VBox alignment="BOTTOM_RIGHT" prefWidth="400.0" spacing="20" style="-fx-padding: 20px;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.financiai.JavaFxController.ControllerPage">
 
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-    </padding>
-
-    <!-- Logotipo -->
-    <fx:define>
-        <Image fx:id="logoImageSource" url="@../css/logo.webp"/>
-    </fx:define>
-
-    <!-- Logotipo -->
-    <ImageView fx:id="logoImage" fitWidth="100" fitHeight="100" preserveRatio="true" smooth="true" image="${logoImageSource}"/>
-
-    <!-- Título -->
-    <Label styleClass="titulo" text="Simulador de Financiamento" />
-
-    <!-- Formulário para entrada de dados -->
-    <GridPane hgap="15" vgap="15" alignment="CENTER">
+    <GridPane alignment="BOTTOM_RIGHT" hgap="15" vgap="10">
+        <!-- Nome do Cliente e CPF -->
         <Label text="Nome do Cliente:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-        <TextField fx:id="nomeClienteField" promptText="Digite o nome" GridPane.columnIndex="1" GridPane.rowIndex="0" styleClass="text-field"/>
+        <TextField fx:id="nomeClienteField" prefWidth="200" promptText="Digite o nome" styleClass="text-field" GridPane.columnIndex="1" GridPane.rowIndex="0" />
 
-        <Label text="CPF do Cliente:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-        <TextField fx:id="cpfClienteField" promptText="Digite o CPF" GridPane.columnIndex="1" GridPane.rowIndex="1" styleClass="text-field"/>
+        <Label text="CPF do Cliente:" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+        <TextField fx:id="cpfClienteField" prefWidth="150" promptText="Digite o CPF" styleClass="text-field" GridPane.columnIndex="3" GridPane.rowIndex="0" />
 
-        <Label text="Renda Mensal:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-        <TextField fx:id="rendaClienteField" promptText="Digite a renda" GridPane.columnIndex="1" GridPane.rowIndex="2" styleClass="text-field"/>
+        <!-- Renda e Prazo -->
+        <Label text="Renda Mensal:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <TextField fx:id="rendaClienteField" prefWidth="200" promptText="Digite a renda" styleClass="text-field" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 
-        <Label text="Prazo (meses):" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-        <TextField fx:id="prazoField" promptText="Digite o prazo" GridPane.columnIndex="1" GridPane.rowIndex="3" styleClass="text-field"/>
+        <Label text="Prazo (meses):" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+        <TextField fx:id="prazoField" prefWidth="150" promptText="Digite o prazo" styleClass="text-field" GridPane.columnIndex="3" GridPane.rowIndex="1" />
 
-        <Label text="Valor do Imóvel:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
-        <TextField fx:id="valorImovelField" promptText="Digite o valor do imóvel" GridPane.columnIndex="1" GridPane.rowIndex="4" styleClass="text-field"/>
+        <!-- Valor do Imóvel e Entrada -->
+        <Label text="Valor do Imóvel:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <TextField fx:id="valorImovelField" prefWidth="200" promptText="Digite o valor" styleClass="text-field" GridPane.columnIndex="1" GridPane.rowIndex="2" />
 
-        <Label text="Valor de Entrada:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
-        <TextField fx:id="valorEntradaField" promptText="Digite o valor de entrada" GridPane.columnIndex="1" GridPane.rowIndex="5" styleClass="text-field"/>
+        <Label text="Valor de Entrada:" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+        <TextField fx:id="valorEntradaField" prefWidth="150" promptText="Digite o valor" styleClass="text-field" GridPane.columnIndex="3" GridPane.rowIndex="2" />
 
-        <Label text="Taxa de Juros (%):" GridPane.columnIndex="0" GridPane.rowIndex="6" />
-        <TextField fx:id="taxaJurosField" promptText="Digite a taxa de juros" GridPane.columnIndex="1" GridPane.rowIndex="6" styleClass="text-field"/>
+        <!-- Taxa de Juros -->
+        <Label text="Taxa de Juros (%):" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <TextField fx:id="taxaJurosField" prefWidth="200" promptText="Digite a taxa" styleClass="text-field" GridPane.columnIndex="1" GridPane.rowIndex="3" />
 
-        <Label text="Tipo de Amortização:" GridPane.columnIndex="0" GridPane.rowIndex="7" />
-        <ChoiceBox fx:id="tipoFinanciamentoBox" GridPane.columnIndex="1" GridPane.rowIndex="7" styleClass="choice-box">
+        <!-- Tipo de Amortização -->
+        <Label text="Tipo de Amortização:" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+        <ChoiceBox fx:id="tipoFinanciamentoBox" prefHeight="25.0" prefWidth="92.0" styleClass="choice-box" GridPane.columnIndex="3" GridPane.rowIndex="3">
             <items>
                 <FXCollections fx:factory="observableArrayList">
                     <String fx:value="SAC" />
@@ -62,8 +45,9 @@
             </items>
         </ChoiceBox>
 
-        <Label text="Tipo de Imóvel:" GridPane.columnIndex="0" GridPane.rowIndex="8" />
-        <ChoiceBox fx:id="tipoImovelBox" GridPane.columnIndex="1" GridPane.rowIndex="8" styleClass="choice-box">
+        <!-- Tipo de Imóvel -->
+        <Label text="Tipo de Imóvel:" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+        <ChoiceBox fx:id="tipoImovelBox" styleClass="choice-box" GridPane.columnIndex="3" GridPane.rowIndex="4">
             <items>
                 <FXCollections fx:factory="observableArrayList">
                     <String fx:value="CASA" />
@@ -71,23 +55,32 @@
                 </FXCollections>
             </items>
         </ChoiceBox>
+      <columnConstraints>
+         <ColumnConstraints />
+         <ColumnConstraints />
+         <ColumnConstraints />
+         <ColumnConstraints />
+      </columnConstraints>
+      <rowConstraints>
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+      </rowConstraints>
     </GridPane>
 
-    <!-- Botão de cálculo -->
-    <HBox spacing="10" alignment="CENTER">
-        <Button onAction="#calcularFinanciamento" text="Calcular" styleClass="botao" />
+    <!-- Botão de Calcular Financiamento alinhado à esquerda -->
+    <HBox alignment="TOP_CENTER" spacing="5">
+        <Button contentDisplay="TOP" defaultButton="true" onAction="#calcularFinanciamento" prefHeight="84.0" prefWidth="326.0" styleClass="botao" text="Calcular Financiamento">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
     </HBox>
 
     <!-- Exibição de resultados -->
     <Label fx:id="resultadoLabel" styleClass="resultado" text="Resultado aparecerá aqui" />
 
-    <!-- Tabela de parcelas exibida após cálculo -->
-    <TextArea fx:id="tabelaParcelasArea" editable="false" prefRowCount="10" wrapText="true" styleClass="text-area" />
+    <!-- Tabela de parcelas -->
+    <TextArea fx:id="tabelaParcelasArea" editable="false" prefRowCount="10" style="-fx-pref-width: 100%; -fx-pref-height: 150px;" wrapText="true" />
 </VBox>
-
-
-
-
-
-
-

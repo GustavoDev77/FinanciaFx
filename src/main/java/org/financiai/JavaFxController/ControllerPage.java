@@ -129,9 +129,6 @@ public class ControllerPage {
             double totalPagar = tipoAmortizacao == TipoAmortizacao.PRICE ? new Price().totalPagoPrice(valorFinanciado, taxaJurosMensal, prazo) : new SAC().totalPagoSac(valorFinanciado, taxaJurosMensal, prazo);
             financiamento.setTotalPagar(totalPagar);
 
-            // Gerar PDF com as informações
-            gerarPDF(cliente, imovel, listaParcelas, financiamento);
-
         } catch (Exception e) {
             e.printStackTrace();
             resultadoLabel.setText("Erro ao calcular financiamento: " + e.getMessage());
@@ -189,6 +186,9 @@ public class ControllerPage {
 
             // Fechar o documento
             document.close();
+
+            // Gerar PDF com as informações
+            gerarPDF(cliente, imovel, listaParcelas, financiamento);
 
             // Notificar o usuário sobre o PDF gerado
             resultadoLabel.setText("PDF gerado com sucesso!");
